@@ -1,8 +1,8 @@
 {
-	"id": "ronilsonrsj.rn.plugin",
-	"name": "Snippets React Native",
+	"id": "ronilsonrsj.rnimproved.plugin",
+	"name": "React Native Snippets Improved",
 	"main": "dist/main.js",
-	"version": "1.0.3",
+	"version": "2.0.0 AlphaPrerelease 2",
 	"readme": "readme.md",
 	"icon": "icon.png",
 	"files": [],

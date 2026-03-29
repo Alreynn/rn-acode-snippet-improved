@@ -2,7 +2,7 @@
 Construção de Snippets para REACT NATIVE
 */
 export const snippets = [
-	// 	import React NAtive
+	// 	import React Native
 	{
 		prefix: 'imr-import-React',
 		snippet: "import React from 'react';",
@@ -45,6 +45,43 @@ export const snippets = [
 		type: 'snippet RN',
 		description: 'Import StyleSheet from React Native',
 	},
+	// Import Specific Components
+	{
+		prefix: 'im-button',
+		snippet: "import { Button } from 'react-native';",
+		type: 'snippet RN',
+		description: 'Import Button from React Native',
+	},
+	{
+		prefix: 'im-flatlist',
+		snippet: "import { FlatList } from 'react-native';",
+		type: 'snippet RN',
+		description: 'Import FlatList from React Native',
+	},
+	{
+		prefix: 'im-image',
+		snippet: "import { Image } from 'react-native';",
+		type: 'snippet RN',
+		description: 'Import Image from React Native',
+	},
+	{
+		prefix: 'im-pressable',
+		snippet: "import { Pressable } from 'react-native';",
+		type: 'snippet RN',
+		description: 'Import Pressable from React Native',
+	},
+	{
+		prefix: 'im-safeareaview',
+		snippet: "import { SafeAreaView } from 'react-safe-area-context';",
+		type: 'snippet RN',
+		description: 'Import SafeAreaView from React Native',
+	},
+	{
+		prefix: 'im-scrollview',
+		snippet: "import { ScrollView } from 'react-native';",
+		type: 'snippet RN',
+		description: 'Import ScrollView from React Native',
+	},
 	{
 		prefix: 'im-text',
 		snippet: "import { Text } from 'react-native';",
@@ -52,16 +89,16 @@ export const snippets = [
 		description: 'Import Text from React Native',
 	},
 	{
+		prefix: 'im-textinput',
+		snippet: "import { TextInput } from 'react-native';",
+		type: 'snippet RN',
+		description: 'Import TextInput from React Native',
+	},
+	{
 		prefix: 'im-view',
 		snippet: "import { View } from 'react-native';",
 		type: 'snippet RN',
 		description: 'Import View from React Native',
-	},
-	{
-		prefix: 'im-button',
-		snippet: "import { Button } from 'react-native';",
-		type: 'snippet RN',
-		description: 'Import Button from React Native',
 	},
 	{
 		prefix: 'im-r',
@@ -76,9 +113,34 @@ export const snippets = [
 		description: 'Import common components and StyleSheet from React Native',
 		score: 600,
 	},
-justifyContent
+	// Import from Expo
+	{
+		prefix: 'im-link',
+		snippet: "import { Link } from 'expo-router';",
+		type: 'snippet Expo',
+		description: 'Import Link in Expo',
+	},
+	{
+		prefix: 'im-useRouter',
+		snippet: "import { useRouter } from 'expo-router';",
+		type: 'snippet Expo',
+		description: 'Import useRouter in Expo',
+	},
+	{
+		prefix: 'im-useLocalSearchParams',
+		snippet: "import { useLocalSearchParams } from 'expo-router';",
+		type: 'snippet Expo',
+		description: 'Import useLocalSearchParams in Expo',
+	},
+	// Import Expo Icons
+	{
+		prefix: 'im-ionIcons',
+		snippet: "import { Ionicons } from '@expo/vector-icons';",
+		type: 'snippet Expo',
+		description: 'Import Ionicons in Expo Icons',
+	},
+	
 	// Default component
-
 	{
 		prefix: 'rn-component-AsyncStorage',
 		snippet: ` import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -597,63 +659,56 @@ style={styles.image}
 		type: 'snippet log',
 		description: 'Table console log for array of objects',
 	},
-	// Snippets Express
+	
+	// Express Snippets
 	{
 		prefix: 'exp-create-app',
 		snippet: 'const app = express();',
 		type: 'snippet Express',
 		description: 'Criar uma instância do Express',
 	},
-
 	{
 		prefix: 'exp-basic-route',
 		snippet: 'app.get("/", (req, res) => {\n  res.send("Hello, World!");\n});',
 		type: 'snippet Express',
 		description: 'Definir uma rota básica',
 	},
-
 	{
 		prefix: 'exp-param-route',
 		snippet: 'app.get(":id", (req, res) => {\n  const { id } = req.params;\n  res.send(`ID: ${id}`);\n});',
 		type: 'snippet Express',
 		decription: 'Definir uma rota com parâmetros',
 	},
-
 	{
 		prefix: 'exp-delete-route',
 		snippet: "${1:router}.delete('/${2:path}', (req, res) => {\n  $3\n});",
 		type: 'snippet Express',
 		decription: 'Definir rota DELETE no Express',
 	},
-
 	{
 		prefix: 'exp-post-route',
 		snippet: "app.post('/${1:path}', (req, res) => {\n  ${2:const data = req.body;}\n  res.send(${3:response});\n});",
 		type: 'snippet Express',
 		decription: 'Definir rota POST no Express',
 	},
-
 	{
 		prefix: 'exp-put-route',
 		snippet: "app.put('/${1:path}', (req, res) => {\n  ${2:const data = req.body;}\n  res.send(${3:response});\n});",
 		type: 'snippet Express',
 		decription: 'Definir rota PUT no Express',
 	},
-
 	{
 		prefix: 'exp-middleware',
 		snippet: "app.use((req, res, next) => {\n  console.log('Time:', Date.now());\n  next();\n});",
 		type: 'snippet Express',
 		decription: 'Exemplo de middleware',
 	},
-
 	{
 		prefix: 'exp-404',
 		snippet: "app.use((req, res, next) => {\n  res.status(404).send('Sorry, we could not find that!');\n});",
 		type: 'snippet Express',
 		decription: 'Lidar com erros 404',
 	},
-
 	{
 		prefix: 'exp-error-handler',
 		snippet:
@@ -661,50 +716,51 @@ style={styles.image}
 		type: 'snippet Express',
 		decription: 'Manipulador global de erros',
 	},
-
 	{
 		prefix: 'exp-start-server',
 		snippet: "app.listen(${1:3000}, () => {\n  console.log('Server is running on port ${1:3000}');\n});",
 		type: 'snippet Express',
 		decription: 'Iniciar o servidor',
 	},
-
-	// TouchableOpacity
+	
+	// Type assist components
 	{
-		prefix: 'TouchableOpacity',
-		snippet: '<TouchableOpacity onPress={$1}>\n  $2\n</TouchableOpacity>',
-		type: 'snippet RN',
-		description: 'Create TouchableOpacity in React Native',
+		prefix: 'Button',
+		snippet: `<Button
+title="Press me"
+onPress={() => alert('Button pressed!')}
+/>`,
+		type: 'snippet Dev.',
+		description: 'Create Simple Button',
 	},
-	// SafeAreaView
+	{
+		prefix: 'FlatList',
+		snippet: `<FlatList
+data={$1}
+renderItem={item => $2}
+keyExtractor={(item) => $3}
+/>`,
+		type: 'snippet RN',
+		description: 'Create FlatList in React Native',
+	},
+	{
+		prefix: 'Pressable',
+		snippet: '<Pressable onPress={$1}>\n  $2\n</Pressable>',
+		type: 'snippet RN',
+		description: 'Create Pressable in React Native',
+	},
 	{
 		prefix: 'SafeAreaView',
 		snippet: '<SafeAreaView style={$1}>\n  $2\n</SafeAreaView>',
 		type: 'snippet RN',
 		description: 'Create SafeAreaView in React Native',
 	},
-
-	// FlatList
-	{
-		prefix: 'FlatList',
-		snippet: `<FlatList
-data={$1}
-renderItem={({ item }) => ($2)}
-keyExtractor={(item) => item.id.toString()}
-/>`,
-		type: 'snippet RN',
-		description: 'Create FlatList in React Native',
-	},
-
-	// ScrollView
 	{
 		prefix: 'ScrollView',
 		snippet: '<ScrollView style={$1}>\n  $2\n</ScrollView>',
 		type: 'snippet RN',
 		description: 'Create ScrollView in React Native',
 	},
-
-	// TextInput
 	{
 		prefix: 'TextInput',
 		snippet: `<TextInput style={styles.$1}\n
@@ -715,32 +771,17 @@ keyExtractor={(item) => item.id.toString()}
 		type: 'snippet RN',
 		description: 'Create TextInput in React Native',
 	},
-
-	// Pressable
 	{
-		prefix: 'rn-pressable',
-		snippet: '<Pressable onPress={$1}>\n  $2\n</Pressable>',
+		prefix: 'TouchableOpacity',
+		snippet: '<TouchableOpacity onPress={$1}>\n  $2\n</TouchableOpacity>',
 		type: 'snippet RN',
-		description: 'Create Pressable in React Native',
+		description: 'Create TouchableOpacity in React Native',
 	},
-
-	// View
 	{
 		prefix: 'rn-view',
 		snippet: '<View $1>\n  $2\n</View>',
 		type: 'snippet RN',
 		description: 'Create View in React Native',
-	},
-
-	// Button
-	{
-		prefix: 'rn-button',
-		snippet: `      <Button
-title="Press me"
-onPress={() => alert('Button pressed!')}
-/>`,
-		type: 'snippet Dev.',
-		description: 'Create Button Simple',
 	},
 
 	// Style Import
@@ -766,7 +807,7 @@ export default styles;`,
 		description: 'Adicionar estilo nomeSn para um componente',
 	},
 
-	//Create StyleSheet
+	// Create StyleSheet
 	{
 		prefix: 'create-style',
 		snippet: `const styles = StyleSheet.create({
@@ -922,10 +963,7 @@ fontSize: 16,
 		type: 'snippet Prop.',
 		description: 'Add flexDirection style to a component',
 		body: [
-			"flexDirection: '${1:row}',",
-			"flexDirection: '${2:row-reverse}',",
-			"flexDirection: '${3:column}',",
-			"flexDirection: '${4:column-reverse}',",
+			"flexDirection: '${1|row,row-reverse,column,column-reverse|}',$0",
 		],
 		score: 750,
 	},
@@ -1621,6 +1659,262 @@ fontSize: 16,
 		snippet: "writingDirection: '$1',",
 		type: 'snippet Prop.',
 		description: 'Add writingDirection style to a component',
+	},
+	
+	// Component Properties
+	{
+		prefix: 'accessible',
+		snippet: "accessible={$1}",
+		type: 'snippet Prop.',
+		description: 'Add accessible properties to a component',
+		body: [
+			"accessible={${1|true,false|}}",
+		],
+	},
+	{
+		prefix: 'accessibilityLabel',
+		snippet: "accessibilityLabel='$1'",
+		type: 'snippet Prop.',
+		description: 'Add accessibilityLabel properties to a component',
+	},
+	{
+		prefix: 'alt',
+		snippet: "alt='$1'",
+		type: 'snippet Prop.',
+		description: 'Add alt properties to a component',
+	},
+	{
+		prefix: 'barStyle',
+		snippet: "barStyle='$1'",
+		type: 'snippet Prop.',
+		description: 'Add barStyle properties to StatusBar',
+		body: [
+			"barStyle='${1|dark-content,light-content,hidden|}'",
+		],
+	},
+	{
+		prefix: 'color',
+		snippet: "color='$1'",
+		type: 'snippet Prop.',
+		description: 'Add color properties to Icons',
+	},
+	{
+		prefix: 'contentContainerStyle',
+		snippet: "contentContainerStyle={$1}",
+		type: 'snippet Prop.',
+		description: 'Add contentContainerStyle properties to FlatList',
+	},
+	{
+		prefix: 'data',
+		snippet: "data={$1}",
+		type: 'snippet Prop.',
+		description: 'Add data properties to FlatList',
+	},
+	{
+		prefix: 'href',
+		snippet: "href='$1'",
+		type: 'snippet Prop.',
+		description: 'Add href properties to Link',
+	},
+	{
+		prefix: 'name',
+		snippet: "name='$1'",
+		type: 'snippet Prop.',
+		description: 'Add name properties to Icons',
+	},
+	{
+		prefix: 'numColumns',
+		snippet: "numColumns={$1}",
+		type: 'snippet Prop.',
+		description: 'Add numColumns properties to FlatList',
+	},
+	{
+		prefix: 'onHoverIn',
+		snippet: "onHoverIn={() => $1}",
+		type: 'snippet Prop.',
+		description: 'Add onHoverIn properties to Pressable',
+	},
+	{
+		prefix: 'onHoverOut',
+		snippet: "onHoverOut={() => $1}",
+		type: 'snippet Prop.',
+		description: 'Add onHoverOut properties to Pressable',
+	},
+	{
+		prefix: 'onLongPress',
+		snippet: "onLongPress={() => $1}",
+		type: 'snippet Prop.',
+		description: 'Add onLongPress properties to Pressable',
+	},
+	{
+		prefix: 'onPress',
+		snippet: "onPress={() => $1}",
+		type: 'snippet Prop.',
+		description: 'Add onPress properties to Pressable',
+	},
+	{
+		prefix: 'onPressIn',
+		snippet: "onPressIn={() => $1}",
+		type: 'snippet Prop.',
+		description: 'Add onPressIn properties to Pressable',
+	},
+	{
+		prefix: 'onPressMove',
+		snippet: "onPressMove={() => $1}",
+		type: 'snippet Prop.',
+		description: 'Add onPressMove properties to Pressable',
+	},
+	{
+		prefix: 'onPressOut',
+		snippet: "onPressOut={() => $1}",
+		type: 'snippet Prop.',
+		description: 'Add onPressOut properties to Pressable',
+	},
+	{
+		prefix: 'options',
+		snippet: "options={{\n $1 \n}}",
+		type: 'snippet Prop.',
+		description: 'Add options properties to layout',
+	},
+	{
+		prefix: 'placeholder',
+		snippet: "placeholder='$1'",
+		type: 'snippet Prop.',
+		description: 'Add placeholder properties to TextInput',
+	},
+	
+	// Layout Properties
+	{
+		prefix: 'headerBackTitleVisible',
+		snippet: "headerBackTitleVisible: $1,",
+		type: 'snippet Prop.',
+		description: 'Add headerBackTitleVisible properties to layout',
+		body: [
+			"headerBackTitleVisible: ${1|true,false|},",
+		],
+	},
+	{
+		prefix: 'headerTitle',
+		snippet: "headerTitle: '$1',",
+		type: 'snippet Prop.',
+		description: 'Add headerTitle properties to layout',
+	},
+	{
+		prefix: 'headerShadowVisible',
+		snippet: "headerShadowVisible: $1,",
+		type: 'snippet Prop.',
+		description: 'Add headerShadowVisible properties to layout',
+		body: [
+			"headerShadowVisible: ${1|true,false|},",
+		],
+	},
+	{
+		prefix: 'headerShown',
+		snippet: "headerShown: $1,",
+		type: 'snippet Prop.',
+		description: 'Add headerShown properties to layout',
+		body: [
+			"headerShown: ${1|true,false|},",
+		],
+	},
+	{
+		prefix: 'headerTintColor',
+		snippet: "headerTintColor: '$1',",
+		type: 'snippet Prop.',
+		description: 'Add headerTintColor properties to layout',
+	},
+	{
+		prefix: 'headerTransparent',
+		snippet: "headerTransparent: $1,",
+		type: 'snippet Prop.',
+		description: 'Add headerTransparent properties to layout',
+		body: [
+			"headerTransparent: ${1|true,false|},",
+		],
+	},
+	{
+		prefix: 'presentation',
+		snippet: "presentation: '$1',",
+		type: 'snippet Prop.',
+		description: 'Add presentation properties to layout',
+		body: [
+			"presentation: '${1|card,modal,transparentModal,containedModal,containedTransparentModal,fullScreenModal,formSheet|}',",
+		],
+	},
+	{
+		prefix: 'sheetAllowedDetents',
+		snippet: "sheetAllowedDetents: [$1, $2],",
+		type: 'snippet Prop.',
+		description: 'Add sheetAllowedDetents properties to layout',
+	},
+	{
+		prefix: 'sheetInitialDetentIndex',
+		snippet: "sheetInitialDetentIndex: $1,",
+		type: 'snippet Prop.',
+		description: 'Add sheetInitialDetentIndex properties to layout',
+		body: [
+			"sheetInitialDetentIndex: ${1|1,last|},",
+		],
+	},
+	{
+		prefix: 'sheetCornerRadius',
+		snippet: "sheetCornerRadius: $1,",
+		type: 'snippet Prop.',
+		description: 'Add sheetCornerRadius properties to layout',
+	},
+	{
+		prefix: 'sheetGrabberVisible',
+		snippet: "sheetGrabberVisible: $1,",
+		type: 'snippet Prop.',
+		description: 'Add sheetGrabberVisible properties to layout',
+		body: [
+			"sheetGrabberVisible: ${1|true,false|},",
+		],
+	},
+	{
+		prefix: 'sheetLargestUndimmedDetentIndex',
+		snippet: "sheetLargestUndimmedDetentIndex: $1,",
+		type: 'snippet Prop.',
+		description: 'Add sheetLargestUndimmedDetentIndex properties to layout',
+		body: [
+			"sheetLargestUndimmedDetentIndex: ${1|1,none,last|},",
+		],
+	},
+	{
+		prefix: 'tabBarAccessibilityLabel',
+		snippet: "tabBarAccessibilityLabel: '$1',",
+		type: 'snippet Prop.',
+		description: 'Add tabBarAccessibilityLabel properties to layout',
+	},
+	{
+		prefix: 'tabBarActiveBackgroundColor',
+		snippet: "tabBarActiveBackgroundColor: '$1',",
+		type: 'snippet Prop.',
+		description: 'Add tabBarActiveBackgroundColor properties to layout',
+	},
+	{
+		prefix: 'tabBarActiveTintColor',
+		snippet: "tabBarActiveTintColor: '$1',",
+		type: 'snippet Prop.',
+		description: 'Add tabBarActiveTintColor properties to layout',
+	},
+	{
+		prefix: 'tabBarBackground',
+		snippet: "tabBarBackground: () => (\n $1 \n),",
+		type: 'snippet Prop.',
+		description: 'Add tabBarBackground properties to layout',
+	},
+	{
+		prefix: 'tabBarIcon',
+		snippet: "tabBarIcon: ({ color, size }) => <Ionicons name='home-outline' size={24} color='white'></Ionicons>",
+		type: 'snippet Prop.',
+		description: 'Add tabBarIcon properties to layout',
+	},
+	{
+		prefix: 'title',
+		snippet: "title: '$1',",
+		type: 'snippet Prop.',
+		description: 'Add title properties to layout',
 	},
 
 	/**
