@@ -144,25 +144,24 @@ export const snippets = [
 	{
 		prefix: 'rn-component-AsyncStorage',
 		snippet: ` import AsyncStorage from '@react-native-async-storage/async-storage';
-// npm package
 
 const storeData = async (value) => {
-try {
-await AsyncStorage.setItem('@storage_Key', value);
-} catch (e) {
-// saving error
-}
+    try {
+        await AsyncStorage.setItem('@storage_Key', value);
+    } catch (e) {
+        // saving error
+    }
 };
 
 const getData = async () => {
-try {
-const value = await AsyncStorage.getItem('@storage_Key');
-if(value !== null) {
-// value previously stored
-}
-} catch(e) {
-// error reading value
-}
+    try {
+        const value = await AsyncStorage.getItem('@storage_Key');
+        if(value !== null) {
+            // value previously stored
+        }
+    } catch(e) {
+        // error reading value
+    }
 };
 
 `,
@@ -175,20 +174,20 @@ if(value !== null) {
 		snippet: `import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 
-export default function  \${1:FILE_NAME}()  {
-return (
-<View style={styles.container}>
-<Text>Welcome to React Native!</Text>
-</View>
-);
+export default function \${1:FILE_NAME}()  {
+    return (
+        <View style={styles.container}>
+        <Text>Welcome to React Native!</Text>
+        </View>
+    );
 };
 
 const styles = StyleSheet.create({
-container: {
-flex: 1,
-justifyContent: 'center',
-alignItems: 'center',
-},
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
 });
 `,
 		type: 'snippet RN',
@@ -203,20 +202,19 @@ alignItems: 'center',
 import { View, Text, StyleSheet } from 'react-native';
 
 const \${1:FILE_NAME} = () => {
-return (
-<View style={styles.container}>
-<Text>Hello, World!</Text>
-</View>
-);
+    return (
+        <View style={styles.container}>
+            <Text>Hello, World!</Text>
+        </View>
+    );
 };
 
 const styles = StyleSheet.create({
-container: {
-flex: 1,
-justifyContent: 'center',
-alignItems: 'center',
-},
-//
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
 });
 
 export default $1;
@@ -233,14 +231,14 @@ export default $1;
 import { View, Text, Button } from 'react-native';
 
 const Counter$1 = () => {
-const [count, setCount] = useState(0);
-
-return (
-<View>
-<Text>{count}</Text>
-<Button title="Increment" onPress={() => setCount(count + 1)} />
-</View>
-);
+    const [count, setCount] = useState(0);
+    
+    return (
+        <View>
+            <Text>{count}</Text>
+            <Button title="Increment" onPress={() => setCount(count + 1)} />
+        </View>
+    );
 };
 
 export default Counter$1;
@@ -256,19 +254,19 @@ export default Counter$1;
 import { View, Text } from 'react-native';
 
 const FetchData$1 = () => {
-const [data, setData] = useState(null);
-
-useEffect(() => {
-fetch('https://jsonplaceholder.typicode.com/posts/1')
-.then(response => response.json())
-.then(json => setData(json));
-}, []);
-
-return (
-<View>
-{data ? <Text>{data.title}</Text> : <Text>Loading...</Text>}
-</View>
-);
+    const [data, setData] = useState(null);
+    
+    useEffect(() => {
+        fetch('https://jsonplaceholder.typicode.com/posts/1')
+        .then(response => response.json())
+        .then(json => setData(json));
+    }, []);
+    
+    return (
+        <View>
+            {data ? <Text>{data.title}</Text> : <Text>Loading...</Text>}
+        </View>
+    );
 };
 
 export default FetchData$1;
@@ -286,36 +284,36 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { Button, View, Text } from 'react-native';
 
 const HomeScreen$1 = ({ navigation }) => {
-return (
-<View>
-<Text>Home Screen</Text>
-<Button
-title="Go to Details"
-onPress={() => navigation.navigate('Details')}
-/>
-</View>
-);
+    return (
+        <View>
+            <Text>Home Screen</Text>
+            <Button
+            title="Go to Details"
+            onPress={() => navigation.navigate('Details')}
+            />
+        </View>
+    );
 };
 
 const DetailsScreen$2 = () => {
-return (
-<View>
-<Text>Details Screen</Text>
-</View>
-);
+    return (
+        <View>
+            <Text>Details Screen</Text>
+        </View>
+    );
 };
 
 const Stack = createStackNavigator();
 
 const App$3 = () => {
-return (
-<NavigationContainer>
-<Stack.Navigator initialRouteName="Home">
-<Stack.Screen name="Home" component={HomeScreen} />
-<Stack.Screen name="Details" component={DetailsScreen} />
-</Stack.Navigator>
-</NavigationContainer>
-);
+    return (
+        <NavigationContainer>
+            <Stack.Navigator initialRouteName="Home">
+            <Stack.Screen name="Home" component={HomeScreen} />
+            <Stack.Screen name="Details" component={DetailsScreen} />
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
 };
 
 export default App$3;
@@ -331,24 +329,24 @@ export default App$3;
 import { View, Text, StyleSheet } from 'react-native';
 
 const StyledComponent$1 = () => {
-return (
-<View style={styles.container}>
-<Text style={styles.text}>Hello, World with Styles!$2</Text>
-</View>
-);
+    return (
+        <View style={styles.container}>
+            <Text style={styles.text}>Hello, World with Styles!$2</Text>
+        </View>
+    );
 };
 
 const styles = StyleSheet.create({
-container: {
-flex: 1,
-justifyContent: 'center',
-alignItems: 'center',
-backgroundColor: '#f0f0f0',
-},
-text: {
-color: '#333',
-fontSize: 20,
-},
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#f0f0f0',
+    },
+    text: {
+        color: '#333',
+        fontSize: 20,
+    },
 });
 
 export default StyledComponent$1;
@@ -364,31 +362,31 @@ export default StyledComponent$1;
 import { View, TextInput, Text, StyleSheet } from 'react-native';
 
 const InputComponent$1 = () => {
-const [text$2, setText$3] = useState('');
-
-return (
-<View style={styles.container}>
-<TextInput
-style={styles.input}
-placeholder="Type something..."
-onChangeText={setText}
-value={text}
-/>
-<Text>{text}</Text>
-</View>
-);
+    const [text$2, setText$3] = useState('');
+    
+    return (
+        <View style={styles.container}>
+            <TextInput
+            style={styles.input}
+            placeholder="Type something..."
+            onChangeText={setText}
+            value={text}
+            />
+            <Text>{text}</Text>
+        </View>
+    );
 };
 
 const styles = StyleSheet.create({
-container: {
-padding: 20,
-},
-input: {
-height: 40,
-borderColor: 'gray',
-borderWidth: 1,
-paddingHorizontal: 10,
-},
+    container: {
+        padding: 20,
+    },
+    input: {
+        height: 40,
+        borderColor: 'gray',
+        borderWidth: 1,
+        paddingHorizontal: 10,
+    },
 });
 
 export default InputComponent$1;
@@ -404,37 +402,37 @@ export default InputComponent$1;
 import { FlatList, Text, View, StyleSheet } from 'react-native';
 
 const DATA = [
-{ id: '1', title: 'Item 1' },
-{ id: '2', title: 'Item 2' },
-{ id: '3', title: 'Item 3' },
+    { id: '1', title: 'Item 1' },
+    { id: '2', title: 'Item 2' },
+    { id: '3', title: 'Item 3' },
 ];
 
 const Item$1 = ({ title }) => (
-<View style={styles.item}>
-<Text style={styles.title}>{title}</Text>
-</View>
+    <View style={styles.item}>
+        <Text style={styles.title}>{title}</Text>
+    </View>
 );
 
 const MyList$2 = () => {
-return (
-<FlatList
-data={DATA}
-renderItem={({ item }) => <Item title={item.title} />}
-keyExtractor={item => item.id}
-/>
-);
+    return (
+        <FlatList
+        data={DATA}
+        renderItem={({ item }) => <Item title={item.title} />}
+        keyExtractor={item => item.id}
+        />
+    );
 };
 
 const styles = StyleSheet.create({
-item: {
-backgroundColor: '#f9c2ff',
-padding: 20,
-marginVertical: 8,
-marginHorizontal: 16,
-},
-title: {
-fontSize: 32,
-},
+    item: {
+        backgroundColor: '#f9c2ff',
+        padding: 20,
+        marginVertical: 8,
+        marginHorizontal: 16,
+    },
+    title: {
+        fontSize: 32,
+    },
 });
 
 export default MyList$2;
@@ -450,22 +448,22 @@ export default MyList$2;
 import { Button, View, StyleSheet } from 'react-native';
 
 const MyButton$1 = () => {
-return (
-<View style={styles.container}>
-<Button
-title="Press me"
-onPress={() => alert('Button pressed!')}
-/>
-</View>
-);
+    return (
+        <View style={styles.container}>
+            <Button
+            title="Press me"
+            onPress={() => alert('Button pressed!')}
+            />
+        </View>
+    );
 };
 
 const styles = StyleSheet.create({
-container: {
-flex: 1,
-justifyContent: 'center',
-alignItems: 'center',
-},
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
 });
 
 export default MyButton$1;
@@ -481,24 +479,24 @@ export default MyButton$1;
 import { ScrollView, Text, StyleSheet } from 'react-native';
 
 const MyScrollView$1 = () => {
-return (
-<ScrollView style={styles.container}>
-<Text style={styles.text}>Scroll me!</Text>
-<Text style={styles.text}>More content...</Text>
-<Text style={styles.text}>Even more content...</Text>
-</ScrollView>
-);
+    return (
+        <ScrollView style={styles.container}>
+            <Text style={styles.text}>Scroll me!</Text>
+            <Text style={styles.text}>More content...</Text>
+            <Text style={styles.text}>Even more content...</Text>
+        </ScrollView>
+    );
 };
 
 const styles = StyleSheet.create({
-container: {
-flex: 1,
-padding: 20,
-},
-text: {
-fontSize: 18,
-marginVertical: 10,
-},
+    container: {
+        flex: 1,
+        padding: 20,
+    },
+    text: {
+        fontSize: 18,
+        marginVertical: 10,
+    },
 });
 
 export default MyScrollView$1;
@@ -514,26 +512,26 @@ export default MyScrollView$1;
 import { Image, View, StyleSheet } from 'react-native';
 
 const MyImage$1 = () => {
-return (
-<View style={styles.container}>
-<Image
-source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
-style={styles.image}
-/>
-</View>
-);
+    return (
+        <View style={styles.container}>
+            <Image
+            source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }}
+            style={styles.image}
+            />
+        </View>
+    );
 };
 
 const styles = StyleSheet.create({
-container: {
-flex: 1,
-justifyContent: 'center',
-alignItems: 'center',
-},
-image: {
-width: 50,
-height: 50,
-},
+    container: {
+        flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+        },
+        image: {
+            width: 50,
+            height: 50,
+    },
 });
 
 export default MyImage$1;
@@ -588,7 +586,7 @@ style={styles.image}
         );
      };`,
 		type: 'snippet RN',
-		description: 'Creat snippetfrom  component personalized',
+		description: 'Creat snippetfrom component personalized',
 	},
 	// ReactNativeStyleSnippet
 	{
@@ -779,7 +777,7 @@ keyExtractor={(item) => $3}
 	},
 	{
 		prefix: 'rn-view',
-		snippet: '<View $1>\n  $2\n</View>',
+		snippet: '<View>\n    $1\n</View>',
 		type: 'snippet RN',
 		description: 'Create View in React Native',
 	},
@@ -791,14 +789,14 @@ keyExtractor={(item) => $3}
 
 const styles = StyleSheet.create({
     componentNme$1: {
-      backgroundColor: '#007BFF',
-      padding: 10,
-      borderRadius: 5,
-      alignItems: 'center',
+        backgroundColor: '#007BFF',
+        padding: 10,
+        borderRadius: 5,
+        alignItems: 'center',
     },
     text: {
-     color: '#FFFFFF',
-     fontSize: 16,
+        color: '#FFFFFF',
+        fontSize: 16,
     },
     });
 
@@ -811,16 +809,16 @@ export default styles;`,
 	{
 		prefix: 'create-style',
 		snippet: `const styles = StyleSheet.create({
-conatiner$1: {
-backgroundColor: '#007BFF',
-padding: 10,
-borderRadius: 5,
-alignItems: 'center',
-},
-text: {
-color: '#FFFFFF',
-fontSize: 16,
-},
+    conatiner$1: {
+        backgroundColor: '#007BFF',
+        padding: 10,
+        borderRadius: 5,
+        alignItems: 'center',
+    },
+    text: {
+        color: '#FFFFFF',
+        fontSize: 16,
+    },
 });`,
 		type: 'snippet Dev.',
 		description: 'Adicionar StyleSheet',
@@ -959,7 +957,6 @@ fontSize: 16,
 	// Flex Direction Teste
 	{
 		prefix: 'flexDirection',
-		snippet: "flexDirection: '$1',",
 		type: 'snippet Prop.',
 		description: 'Add flexDirection style to a component',
 		body: [
@@ -1253,6 +1250,13 @@ fontSize: 16,
 		snippet: 'right: $1,',
 		type: 'snippet Prop.',
 		description: 'Add right style to a component',
+	},
+	// Row Gap - number
+	{
+		prefix: 'rowGap',
+		snippet: 'rowGap: $1,',
+		type: 'snippet Prop.',
+		description: 'Add rowGap style (number) to a component',
 	},
 	// start
 	{
@@ -1664,7 +1668,6 @@ fontSize: 16,
 	// Component Properties
 	{
 		prefix: 'accessible',
-		snippet: "accessible={$1}",
 		type: 'snippet Prop.',
 		description: 'Add accessible properties to a component',
 		body: [
@@ -1685,7 +1688,6 @@ fontSize: 16,
 	},
 	{
 		prefix: 'barStyle',
-		snippet: "barStyle='$1'",
 		type: 'snippet Prop.',
 		description: 'Add barStyle properties to StatusBar',
 		body: [
@@ -1711,6 +1713,22 @@ fontSize: 16,
 		description: 'Add data properties to FlatList',
 	},
 	{
+		prefix: 'ellipsizeMode',
+		type: 'snippet Prop.',
+		description: 'Add ellipsizeMode properties to FlatList',
+		body: [
+			"ellipsizeMode='${1|head,middle,tail,clip|}'",
+		],
+	},
+	{
+		prefix: 'horizontal',
+		type: 'snippet Prop.',
+		description: 'Add horizontal properties to FlatList',
+		body: [
+			"horizontal=${1|true,false|}",
+		],
+	},
+	{
 		prefix: 'href',
 		snippet: "href='$1'",
 		type: 'snippet Prop.',
@@ -1723,8 +1741,14 @@ fontSize: 16,
 		description: 'Add name properties to Icons',
 	},
 	{
+		prefix: 'numberOfLines',
+		snippet: "numberOfLines={${1:1}}",
+		type: 'snippet Prop.',
+		description: 'Add numberOfLines properties to FlatList',
+	},
+	{
 		prefix: 'numColumns',
-		snippet: "numColumns={$1}",
+		snippet: "numColumns={${1:1}}",
 		type: 'snippet Prop.',
 		description: 'Add numColumns properties to FlatList',
 	},
@@ -1772,7 +1796,7 @@ fontSize: 16,
 	},
 	{
 		prefix: 'options',
-		snippet: "options={{\n $1 \n}}",
+		snippet: "options={{\n    $1\n}}",
 		type: 'snippet Prop.',
 		description: 'Add options properties to layout',
 	},
@@ -1781,6 +1805,46 @@ fontSize: 16,
 		snippet: "placeholder='$1'",
 		type: 'snippet Prop.',
 		description: 'Add placeholder properties to TextInput',
+	},
+	{
+		prefix: 'scrollEnabled',
+		type: 'snippet Prop.',
+		description: 'Add scrollEnabled properties to FlatList',
+		body: [
+			"scrollEnabled=${1|true,false|}",
+		],
+	},
+	{
+		prefix: 'source',
+		type: 'snippet Prop.',
+		description: 'Add source properties to FlatList',
+		body: [
+			"source={{ $1 }}",
+		],
+	},
+	{
+		prefix: 'showsHorizontalScrollIndicator',
+		type: 'snippet Prop.',
+		description: 'Add showsHorizontalScrollIndicator properties to FlatList',
+		body: [
+			"showsHorizontalScrollIndicator=${1|true,false|}",
+		],
+	},
+	{
+		prefix: 'showsVerticalScrollIndicator',
+		type: 'snippet Prop.',
+		description: 'Add showsVerticalScrollIndicator properties to FlatList',
+		body: [
+			"showsVerticalScrollIndicator=${1|true,false|}",
+		],
+	},
+	{
+		prefix: 'vertical',
+		type: 'snippet Prop.',
+		description: 'Add vertical properties to FlatList',
+		body: [
+			"vertical=${1|true,false|}",
+		],
 	},
 	
 	// Layout Properties
@@ -1810,7 +1874,6 @@ fontSize: 16,
 	},
 	{
 		prefix: 'headerShown',
-		snippet: "headerShown: $1,",
 		type: 'snippet Prop.',
 		description: 'Add headerShown properties to layout',
 		body: [
@@ -1834,7 +1897,6 @@ fontSize: 16,
 	},
 	{
 		prefix: 'presentation',
-		snippet: "presentation: '$1',",
 		type: 'snippet Prop.',
 		description: 'Add presentation properties to layout',
 		body: [
@@ -1849,7 +1911,6 @@ fontSize: 16,
 	},
 	{
 		prefix: 'sheetInitialDetentIndex',
-		snippet: "sheetInitialDetentIndex: $1,",
 		type: 'snippet Prop.',
 		description: 'Add sheetInitialDetentIndex properties to layout',
 		body: [
@@ -1858,13 +1919,12 @@ fontSize: 16,
 	},
 	{
 		prefix: 'sheetCornerRadius',
-		snippet: "sheetCornerRadius: $1,",
+		snippet: "sheetCornerRadius: ${1:12},",
 		type: 'snippet Prop.',
 		description: 'Add sheetCornerRadius properties to layout',
 	},
 	{
 		prefix: 'sheetGrabberVisible',
-		snippet: "sheetGrabberVisible: $1,",
 		type: 'snippet Prop.',
 		description: 'Add sheetGrabberVisible properties to layout',
 		body: [
@@ -1873,7 +1933,6 @@ fontSize: 16,
 	},
 	{
 		prefix: 'sheetLargestUndimmedDetentIndex',
-		snippet: "sheetLargestUndimmedDetentIndex: $1,",
 		type: 'snippet Prop.',
 		description: 'Add sheetLargestUndimmedDetentIndex properties to layout',
 		body: [
@@ -1906,7 +1965,7 @@ fontSize: 16,
 	},
 	{
 		prefix: 'tabBarIcon',
-		snippet: "tabBarIcon: ({ color, size }) => <Ionicons name='home-outline' size={24} color='white'></Ionicons>",
+		snippet: "tabBarIcon: ({ color, size }) => <Ionicons name='home-outline' size={24} color='white' />",
 		type: 'snippet Prop.',
 		description: 'Add tabBarIcon properties to layout',
 	},

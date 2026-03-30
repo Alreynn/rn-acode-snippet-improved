@@ -1,6 +1,6 @@
 {
 	"name": "React Native Snippets Improved",
-	"version": "2.0.0 Prerelease 2",
+	"version": "2.0.0 Prerelease 3",
 	"description": "Improved Acode React Native Plugin",
 	"main": "dist/main.js",
 	"scripts": {

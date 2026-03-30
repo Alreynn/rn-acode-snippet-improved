@@ -186,10 +186,10 @@ class AcodePlugin {
 			if (!importRegex.test(code)) {
 				const insertionPosition = this.InsertionLocation();
 
-				this.editor.session.insert(insertionPosition, `${importStatement}\n`);
+				this.editor.session.insert(insertionPosition, `${importStatement} `);
 
 				this.closeTag();
-				window.toast('The import was created at the top ☝️ successfully', 3000);
+				window.toast('Imported your custom component.', 3000);
 			}
 		} catch (error) {
 			console.error('Error in setupImportReactComponent:', error);
@@ -322,17 +322,14 @@ class AcodePlugin {
 }
 
 if (window.acode) {
-
 	const acodePlugin = new AcodePlugin();
 	acode.setPluginInit(plugin.id, async (baseUrl, $page, { cacheFileUrl, cacheFile }) => {
-
 		if (!baseUrl.endsWith('/')) {
 			baseUrl += '/';
 		}
 		await acodePlugin.init(baseUrl, $page, cacheFileUrl, cacheFile);
 	});
 	acode.setPluginUnmount(plugin.id, () => {
-	
 		acodePlugin.destroy();
 	});
 }
